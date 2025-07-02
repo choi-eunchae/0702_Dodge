@@ -14,6 +14,10 @@ public class BulletSpawner : MonoBehaviour
 
     private float timeAfterSpawn; //최근 생성 시점에서 지난 시간
 
+    private AudioSource spawnSound; //오디오 소스 컴포넌트
+
+    public AudioClip spawnClip; //총알 생성 시 재생할 오디오 클립
+
     void Start()
     {
         timeAfterSpawn = 0f; //최근 생성 이후의 누적 시간을 0으로 초기화
@@ -21,7 +25,10 @@ public class BulletSpawner : MonoBehaviour
         spawnRate = Random.Range(spawnRateMin, spawnRateMax); //총알 생성 간격을 spawnRateMin와 spawnRateMax 사이에서 랜덤으로 설정
 
         target = FindFirstObjectByType<PlayerController>().transform; //PlayerController 컴포넌트를 가진 게임 오브젝트를 찾아 조준 대상으로 설정  
+
+        spawnSound = GetComponent<AudioSource>(); //현재 게임 오브젝트에 부착된 AudioSource 컴포넌트를 가져옴
     }
+
 
 
     void Update()
@@ -30,6 +37,7 @@ public class BulletSpawner : MonoBehaviour
 
         if (timeAfterSpawn >= spawnRate)  //최근 생성 시점부터 누적된 시간이 생성 주기보다 크거나 같으면
         {
+            spawnSound.PlayOneShot(spawnClip); //총알 생성 사운드 재생
             timeAfterSpawn = 0f; //누적된 시간 리셋
 
             //transform.position 위치와 transform.rotation 회전값을 가진 bulletPrefab의 복제본을 생성하여 bullet 변수에 할당
