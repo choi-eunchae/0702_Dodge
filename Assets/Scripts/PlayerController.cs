@@ -28,12 +28,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow)) zinput = -1f;
 
         Vector3 newVelocity = new Vector3(xinput * speed, 0f, zinput * speed);
-        playerRigidbody.velocity = newVelocity;
+        playerRigidbody.linearVelocity = newVelocity;
     }
 
     public void Die()
     {
         gameObject.SetActive(false);
+
+        GameManager gameManager = FindAnyObjectByType<GameManager>();
+        gameManager.EndGame();
     }
 }
 

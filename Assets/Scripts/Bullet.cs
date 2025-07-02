@@ -29,14 +29,13 @@ public class Bullet : MonoBehaviour
             {
                 //상대방 Player_controler 컴포넌트의 Die() 메서드 실행
                 playerController.Die();
-
+            }
 
                 PlayerController2 playerController2 = other.GetComponent<PlayerController2>();
                 if (playerController2 != null)
                 {
                     playerController2.Die();
                 }
-            }
         }
     }
 }

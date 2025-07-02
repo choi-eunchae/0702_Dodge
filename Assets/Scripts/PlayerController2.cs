@@ -23,11 +23,14 @@ public class PlayerController2 : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) zinput = -1f;
 
         Vector3 newVelocity = new Vector3(xinput * speed, 0f, zinput * speed);
-        playerRigidbody.velocity = newVelocity;
+        playerRigidbody.linearVelocity = newVelocity;
     }
 
     public void Die()
     {
         gameObject.SetActive(false);
+        
+        GameManager gameManager = FindAnyObjectByType<GameManager>();
+        gameManager.EndGame();
     }
 }
