@@ -8,7 +8,7 @@ public class BulletSpawner : MonoBehaviour
 
     public float spawnRateMax = 3f; //최대 생성 주기
 
-    private Transform target; //발사할 대상
+    private Transform[] targets; //발사할 대상
 
     private float spawnRate; //생성 주기
 
@@ -20,7 +20,13 @@ public class BulletSpawner : MonoBehaviour
 
         spawnRate = Random.Range(spawnRateMin, spawnRateMax); //총알 생성 간격을 spawnRateMin와 spawnRateMax 사이에서 랜덤으로 설정
 
-        target = FindFirstObjectByType<PlayerController>().transform; //PlayerController 컴포넌트를 가진 게임 오브젝트를 찾아 조준 대상으로 설정  
+               // Player1Controller, Player2Controller를 모두 찾아 타겟 배열에 저장
+        var player1 = FindFirstObjectByType<PlayerController>();
+        var player2 = FindFirstObjectByType<PlayerController2>();
+
+        targets = new Transform[2];
+        if (player1 != null) targets[0] = player1.transform;
+        if (player2 != null) targets[1] = player2.transform;
     }
 
 
@@ -32,10 +38,13 @@ public class BulletSpawner : MonoBehaviour
         {
             timeAfterSpawn = 0f; //누적된 시간 리셋
 
-            //transform.position 위치와 transform.rotation 회전값을 가진 bulletPrefab의 복제본을 생성하여 bullet 변수에 할당
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation); 
-
-            bullet.transform.LookAt(target); //생성된 bullet 게임 오브젝트의 정면 방향이 target을 향하도록 회전
+            // 각 타겟마다 총알을 생성하고 타겟을 바라보게 함
+            foreach (var target in targets)
+            {
+                if (target == null) continue;
+                GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+                bullet.transform.LookAt(target);
+            }
             
             spawnRate = Random.Range(spawnRateMin, spawnRateMax); //다음번 생성 간격을 spawnRateMin와 spawnRateMax 사이에서 랜덤으로 지정
         }

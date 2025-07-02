@@ -1,12 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
-
-
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     private Rigidbody playerRigidbody;
     public float speed = 8f;
@@ -16,16 +12,15 @@ public class PlayerController : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
     }
 
-
     void Update()
     {
         float xinput = 0f;
         float zinput = 0f;
 
-        if (Input.GetKey(KeyCode.LeftArrow)) xinput = -1f;
-        if (Input.GetKey(KeyCode.RightArrow)) xinput = 1f;
-        if (Input.GetKey(KeyCode.UpArrow)) zinput = 1f;
-        if (Input.GetKey(KeyCode.DownArrow)) zinput = -1f;
+        if (Input.GetKey(KeyCode.A)) xinput = -1f;
+        if (Input.GetKey(KeyCode.D)) xinput = 1f;
+        if (Input.GetKey(KeyCode.W)) zinput = 1f;
+        if (Input.GetKey(KeyCode.S)) zinput = -1f;
 
         Vector3 newVelocity = new Vector3(xinput * speed, 0f, zinput * speed);
         playerRigidbody.velocity = newVelocity;
@@ -36,4 +31,3 @@ public class PlayerController : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
-
