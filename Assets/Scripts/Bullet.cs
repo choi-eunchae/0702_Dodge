@@ -31,11 +31,11 @@ public class Bullet : MonoBehaviour
                 playerController.Die();
             }
 
-            PlayerController2 playerController2 = other.GetComponent<PlayerController2>();
-            if (playerController2 != null)
-            {
-                playerController2.Die();
-            }
+            // PlayerController2 playerController2 = other.GetComponent<PlayerController2>();
+            // if (playerController2 != null)
+            // {
+            //     playerController2.Die();
+            // }
         }
         
             // 벽에 맞으면 총알 파괴 (항상 검사)
