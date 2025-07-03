@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         {   //생존 시간 갱신
             surviveTime += Time.deltaTime;
             //갱신한 생존 시간을 timeText 텍스트 컴포넌트를 통해 표시
-            timeText.text = "Time: " + (int)surviveTime;
+            timeText.text = "Time: " + surviveTime.ToString("F5");
         }
 
         else
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetFloat("BestTime", bestTime);
         }
         //최고 기록을 recordText 텍스트 컴포넌트를 통해 표시
-        recordText.text = "Best Time: " + (int)bestTime;
+        recordText.text = "Best Time: " + bestTime.ToString("F5");;
 
     }
 }
