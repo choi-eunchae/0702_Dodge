@@ -433,7 +433,6 @@ GameObject:
   - component: {fileID: 209557263}
   - component: {fileID: 209557266}
   - component: {fileID: 209557262}
-  - component: {fileID: 209557268}
   - component: {fileID: 209557267}
   m_Layer: 0
   m_Name: BulletSpawner
@@ -646,22 +645,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &209557268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209557261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be37373d47c713d45ac4466716e72e3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  spawnRateMin: 0.5
-  spawnRateMax: 3
-  spawnClip: {fileID: 0}
 --- !u!1 &225585664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,7 +1242,6 @@ GameObject:
   - component: {fileID: 586449962}
   - component: {fileID: 586449961}
   - component: {fileID: 586449960}
-  - component: {fileID: 586449965}
   - component: {fileID: 586449964}
   m_Layer: 0
   m_Name: BulletSpawner
@@ -1472,22 +1454,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &586449965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586449958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be37373d47c713d45ac4466716e72e3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  spawnRateMin: 0.5
-  spawnRateMax: 3
-  spawnClip: {fileID: 0}
 --- !u!1 &790911444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,7 +2340,6 @@ GameObject:
   - component: {fileID: 1417823010}
   - component: {fileID: 1417823013}
   - component: {fileID: 1417823009}
-  - component: {fileID: 1417823015}
   - component: {fileID: 1417823014}
   m_Layer: 0
   m_Name: BulletSpawner
@@ -2587,22 +2552,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1417823015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417823008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be37373d47c713d45ac4466716e72e3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  spawnRateMin: 0.5
-  spawnRateMax: 3
-  spawnClip: {fileID: 0}
 --- !u!1 &1445292076
 GameObject:
   m_ObjectHideFlags: 0
@@ -3618,7 +3567,6 @@ GameObject:
   - component: {fileID: 1988359219}
   - component: {fileID: 1988359222}
   - component: {fileID: 1988359218}
-  - component: {fileID: 1988359224}
   - component: {fileID: 1988359223}
   m_Layer: 0
   m_Name: BulletSpawner
@@ -3831,22 +3779,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1988359224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1988359217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be37373d47c713d45ac4466716e72e3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  spawnRateMin: 0.5
-  spawnRateMax: 3
-  spawnClip: {fileID: 0}
 --- !u!1 &2142793407
 GameObject:
   m_ObjectHideFlags: 0
