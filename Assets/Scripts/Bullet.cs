@@ -16,7 +16,8 @@ public class Bullet : MonoBehaviour
     }
 
     // 트리거 충돌시 자동으로 실행되는 메서드
-    void OnTriggerEnter(Collider other){
+    void OnTriggerEnter(Collider other)
+    {
         //충돌한 상대방 게임 오브젝트가 "Player" 태그를 가진 경우
         if (other.tag == "Player")
         {
@@ -29,6 +30,12 @@ public class Bullet : MonoBehaviour
                 //상대방 Player_controler 컴포넌트의 Die() 메서드 실행
                 playerController.Die();
             }
+
+                PlayerController2 playerController2 = other.GetComponent<PlayerController2>();
+                if (playerController2 != null)
+                {
+                    playerController2.Die();
+                }
         }
     }
 }
